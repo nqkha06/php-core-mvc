@@ -26,16 +26,45 @@ project/
 
 ## Cach chay
 
-1. Tao database va bang:
+1. Tao file env tu file mau:
+
+```bash
+cp .env.example .env
+```
+
+Neu dung Windows CMD:
+
+```bat
+copy .env.example .env
+```
+
+2. Mo file [`.env`](/Users/qkha/Documents/projects/PHP-CORE/quan-ly-chi-tieu/.env) va cap nhat thong tin ket noi MySQL:
+
+```ini
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=php_core_expense
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+3. Tao database va import bang:
 
 ```sql
 SOURCE database.sql;
 ```
 
-2. Cap nhat thong tin ket noi trong `config/database.php`.
+4. Start project:
 
-3. Chay Apache/PHP va tro document root vao thu muc `public/`.
+```bash
 php -S localhost:8000 -t public
+```
+
+5. Mo trinh duyet:
+
+```text
+http://localhost:8000
+```
 
 ## Tai khoan admin mac dinh
 

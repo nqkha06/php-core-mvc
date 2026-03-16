@@ -43,7 +43,8 @@ function env(string $key, $default = null)
     static $env = null;
 
     if ($env === null) {
-        $env = parse_ini_file(__DIR__ . '/.env');
+        $envFile = ROOT_PATH . '/.env';
+        $env = file_exists($envFile) ? parse_ini_file($envFile) : [];
     }
 
     return $env[$key] ?? $default;
